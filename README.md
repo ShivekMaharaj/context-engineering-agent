@@ -46,3 +46,28 @@ cd context-engineering-agent
 pip install google-genai chromadb python-dotenv
 ```
 
+3. **Configure Environment:**
+Create a .env file in the root directory and add your Google Gemini API Key:
+
+```bash
+GOOGLE_API_KEY="your_api_key_here"
+```
+
+4. **Run the Agent:**
+```bash
+python agent.py
+```
+
+# 🧠 Key Technical Patterns Implemented
+
+## Dynamic Context Pruning
+The ContextManager monitors the token weight of the conversation history. When the buffer exceeds the defined limit, it prunes the oldest messages, ensuring the LLM stays within its most "attentive" reasoning range.
+
+## Semantic Context Hydration
+Every user interaction is indexed into a local ChromaDB collection. Before generation, the agent performs a similarity search to find relevant past context, "hydrating" the current prompt with only the facts needed for the specific query.
+
+# 👨‍💻 Author
+### Shivek Maharaj (AI Engineer & Developer)
+![alt text](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)
+
+Developed for the AI Engineering Newsletter Technical Task.
