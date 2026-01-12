@@ -31,6 +31,7 @@ context_agent/
 ├── context_manager.py   # Sliding window & token pruning logic
 ├── vector_store.py      # ChromaDB interface for semantic memory
 └── .env                 # API Credentials (Not tracked)
+```
 
 ## 🔧 Installation & Setup
 
